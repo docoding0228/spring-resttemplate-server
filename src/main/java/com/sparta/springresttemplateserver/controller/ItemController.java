@@ -4,7 +4,7 @@ import com.sparta.springresttemplateserver.dto.ItemResponseDto;
 import com.sparta.springresttemplateserver.dto.UserRequestDto;
 import com.sparta.springresttemplateserver.entity.Item;
 import com.sparta.springresttemplateserver.service.ItemService;
-import org.springframework.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/server")

@@ -24,11 +24,11 @@ public class ItemService {
      * 아이템 제목(query)을 받아 해당 아이템 객체를 반환합니다.
      * @param query 검색할 아이템 제목
      * @return 검색된 아이템 객체 또는 null
-     * 하나의 아이템만 받아올때 사용.
+     * 하나의 아이템만 받아올 때 사용.
      */
     public Item getCallObject(String query) {
         for (Item item : itemList) {
-            if(item.getTitle().equals(query)) {
+            if (item.getTitle().equals(query)) {
                 return item;
             }
         }
@@ -38,7 +38,7 @@ public class ItemService {
     /**
      * 모든 아이템 리스트를 ItemResponseDto 객체로 반환합니다.
      * @return ItemResponseDto 객체
-     * 여러개의 아이템을 받아올때 사용
+     * 여러 개의 아이템을 받아올 때 사용
      */
     public ItemResponseDto getCallList() {
         ItemResponseDto responseDto = new ItemResponseDto();
@@ -49,13 +49,16 @@ public class ItemService {
     }
 
     /**
-     * POST 요청을 처리하는 메소드입니다. 현재는 null을 반환합니다.
+     * 사용자 요청 정보를 받아 특정 아이템을 반환합니다.
      * @param query 검색할 아이템 제목
-     * @param requestDto 사용자 요청 데이터
-     * @return 현재는 null을 반환합니다.
+     * @param userRequestDto 사용자 요청 데이터
+     * @return 검색된 아이템 객체 또는 null
      */
-    public Item postCall(String query, UserRequestDto requestDto) {
-        return null;
+    public Item postCall(String query, UserRequestDto userRequestDto) {
+        System.out.println("userRequestDto.getUsername() = " + userRequestDto.getUsername());
+        System.out.println("userRequestDto.getPassword() = " + userRequestDto.getPassword());
+
+        return getCallObject(query);
     }
 
     /**

@@ -53,6 +53,7 @@ public class ItemController {
      * @param requestDto 사용자 요청 데이터
      * @return 처리된 ItemResponseDto 객체
      */
+
     @PostMapping("/exchange-call")
     public ItemResponseDto exchangeCall(@RequestHeader("X-Authorization") String token, @RequestBody UserRequestDto requestDto) {
         return itemService.exchangeCall(token, requestDto);

@@ -22,6 +22,7 @@ public class ItemService {
 
     /**
      * 아이템 제목(query)을 받아 해당 아이템 객체를 반환합니다.
+     *
      * @param query 검색할 아이템 제목
      * @return 검색된 아이템 객체 또는 null
      * 하나의 아이템만 받아올 때 사용.
@@ -37,6 +38,7 @@ public class ItemService {
 
     /**
      * 모든 아이템 리스트를 ItemResponseDto 객체로 반환합니다.
+     *
      * @return ItemResponseDto 객체
      * 여러 개의 아이템을 받아올 때 사용
      */
@@ -50,7 +52,8 @@ public class ItemService {
 
     /**
      * 사용자 요청 정보를 받아 특정 아이템을 반환합니다.
-     * @param query 검색할 아이템 제목
+     *
+     * @param query          검색할 아이템 제목
      * @param userRequestDto 사용자 요청 데이터
      * @return 검색된 아이템 객체 또는 null
      */
@@ -62,12 +65,18 @@ public class ItemService {
     }
 
     /**
-     * 교환 요청을 처리하는 메소드입니다. 현재는 null을 반환합니다.
-     * @param token 인증 토큰
+     * 인증 토큰과 사용자 요청 데이터를 받아 아이템 리스트를 반환합니다.
+     *
+     * @param token       인증 토큰
      * @param requestDto 사용자 요청 데이터
-     * @return 현재는 null을 반환합니다.
+     * @return ItemResponseDto 객체
      */
+
     public ItemResponseDto exchangeCall(String token, UserRequestDto requestDto) {
-        return null;
+        System.out.println("token = " + token);
+        System.out.println("requestDto.getUsername() = " + requestDto.getUsername());
+        System.out.println("requestDto.getPassword() = " + requestDto.getPassword());
+
+        return getCallList();
     }
 }

@@ -12,7 +12,10 @@ public class ItemController {
 
     private final ItemService itemService;
 
-    // ItemService를 주입받아 초기화합니다.
+    /**
+     * ItemService를 주입받아 초기화합니다.
+     * @param itemService 주입될 ItemService 객체
+     */
     public ItemController(ItemService itemService) {
         this.itemService = itemService;
     }
@@ -48,7 +51,7 @@ public class ItemController {
     }
 
     /**
-     * 교환 요청을 처리하여 ItemResponseDto 객체를 반환합니다.
+     * 인증 토큰과 사용자 요청 데이터를 받아 교환 요청을 처리합니다.
      * @param token 인증 토큰
      * @param requestDto 사용자 요청 데이터
      * @return 처리된 ItemResponseDto 객체
